@@ -1,0 +1,24 @@
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 0 0.5rem;
+
+  .selecao-predio {
+  }
+  .itens {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+
+      li {
+        margin: 0.2rem;
+      }
+    }
+  }
+  .usuario {
+    text-align: center;
+  }
+}
