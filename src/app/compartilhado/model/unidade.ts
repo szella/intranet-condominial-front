@@ -1,10 +1,10 @@
-export interface Andar {
+export interface Unidade {
   id: number;
   nome: String;
   posicao: number;
 }
 
-export interface AndarSalvarEditar {
+export interface UnidadeSalvarEditar {
   id?: number;
   nome: String;
   posicao: number;

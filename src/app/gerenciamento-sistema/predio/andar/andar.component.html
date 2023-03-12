@@ -1,56 +1,61 @@
-<form [formGroup]="formulario">
-  <table>
-    <thead>
-      <th>Nome</th>
-      <th>Descrição</th>
-      <th>Ações</th>
-    </thead>
-    <tbody>
-      <ng-container formArrayName="andares">
-        <tr
-          *ngFor="
-            let andar of andares.controls;
-            index as i;
-            last as last;
-            first as first
-          "
-        >
-          <ng-container [formGroupName]="i">
-            <td>
-              <div>
-                <span>Nome</span>
-                <input type="text" formControlName="nome" />
-              </div>
-            </td>
-            <td>
-              <div>
-                <span>Descrição</span>
-                <input type="text" formControlName="descricao" />
-              </div>
-            </td>
-            <td>
-              <button type="button" [disabled]="first" (click)="subirAndar(i)">
-                Sobe
-              </button>
-              <button type="button" [disabled]="last" (click)="descerAndar(i)">
-                Desce
-              </button>
-              <button
-                type="button"
-                [disabled]="!andares.controls[i].get('id')?.value"
-                (click)="unidades(i)"
-              >
-                Unidades
-              </button>
-              <button type="button" (click)="deletarAndar(i)">Deletar</button>
-            </td>
-          </ng-container>
-        </tr>
-      </ng-container>
-    </tbody>
-  </table>
+<h1 mat-dialog-title>Andares</h1>
 
-  <button (click)="fechar()">Fechar</button>
-  <button (click)="salvar()">Salvar</button>
-  <button (click)="adicionarAndar()">Adicionar andar</button>
+<form [formGroup]="formulario">
+  <div mat-dialog-content>
+    <table>
+      <thead>
+        <th>Nome</th>
+        <th>Ações</th>
+      </thead>
+      <tbody>
+        <ng-container formArrayName="andares">
+          <tr
+            *ngFor="
+              let andar of andares.controls;
+              index as i;
+              last as last;
+              first as first
+            "
+          >
+            <ng-container [formGroupName]="i">
+              <td>
+                <div>
+                  <input type="text" formControlName="nome" />
+                </div>
+              </td>
+              <td>
+                <button
+                  type="button"
+                  [disabled]="first"
+                  (click)="subirAndar(i)"
+                >
+                  Sobe
+                </button>
+                <button
+                  type="button"
+                  [disabled]="last"
+                  (click)="descerAndar(i)"
+                >
+                  Desce
+                </button>
+                <button
+                  type="button"
+                  [disabled]="!andares.controls[i].get('id')?.value"
+                  (click)="unidades(i)"
+                >
+                  Unidades
+                </button>
+                <button type="button" (click)="deletarAndar(i)">Deletar</button>
+              </td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div mat-dialog-actions>
+    <button (click)="fechar()">Fechar</button>
+    <button (click)="salvar()">Salvar</button>
+    <button (click)="adicionarAndar()">Adicionar andar</button>
+  </div>
 </form>

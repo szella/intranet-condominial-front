@@ -17,18 +17,10 @@ export class AndarService {
     return this.http.get<Andar[]>(`${URL}`, { params: params });
   }
 
-  buscarPorId(id: number): Observable<Andar> {
-    return this.http.get<Andar>(`${URL}/${id}`);
-  }
-
   salvarAtualizar(
     predioId: number,
     object: AndarSalvarEditar
   ): Observable<Andar[]> {
     return this.http.post<Andar[]>(`${URL}/${predioId}`, object);
-  }
-
-  deletar(id: number): Observable<void> {
-    return this.http.delete<void>(`${URL}/${id}`);
   }
 }

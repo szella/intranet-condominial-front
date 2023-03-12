@@ -20,8 +20,7 @@ export class FormularioComponent {
   titulo: string = '';
 
   formulario: FormGroup = new FormGroup({
-    nome: new FormControl('', Validators.required),
-    descricao: new FormControl(''),
+    nome: new FormControl('', Validators.required)
   });
 
   constructor(
@@ -39,7 +38,6 @@ export class FormularioComponent {
   buscar() {
     this.predioService.buscarPorId(this.id!).subscribe((result: Predio) => {
       this.formulario.get('nome')?.setValue(result.nome);
-      this.formulario.get('descricao')?.setValue(result.descricao);
     });
   }
 

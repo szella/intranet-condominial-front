@@ -5,13 +5,11 @@
   <table>
     <thead>
       <th>Nome</th>
-      <th>Descrição</th>
       <th>Ações</th>
     </thead>
     <tbody>
       <tr *ngFor="let predio of predios">
         <td>{{ predio.nome }}</td>
-        <td>{{ predio.descricao }}</td>
         <td>
           <button class="button" (click)="andares(predio.id)">Andares</button>
           <button type="button" (click)="editarPredio(predio.id)">

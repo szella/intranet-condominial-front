@@ -45,21 +45,19 @@ export class AndarComponent {
       this.fb.group({
         id: [andar?.id ?? null],
         nome: [andar?.nome ?? '', Validators.required],
-        descricao: [andar?.descricao ?? null],
         posicao: [posicao ?? andar?.posicao ?? this.andares.length + 1],
       })
     );
   }
 
   subirAndar(posicao: number) {
-    console.log(posicao);
     if (posicao > 0) {
       this.reposicionarAndares(posicao, posicao - 1);
     }
   }
 
   descerAndar(posicao: number) {
-    if (posicao > 0) {
+    if (posicao < this.andares.length - 1) {
       this.reposicionarAndares(posicao, posicao + 1);
     }
   }
