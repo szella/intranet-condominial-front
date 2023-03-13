@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{ titulo }}</h1>
+
+<form [formGroup]="formulario">
+  <div mat-dialog-content>
+    <div>
+      <span>Nome</span>
+      <input type="text" formControlName="nome" />
+    </div>
+    <div>
+      <span>Valor</span>
+      <input type="text" formControlName="valor" />
+    </div>
+    <div>
+      <span>Predio</span>
+      <select formControlName="predioId">
+        <option *ngFor="let predio of predios" [value]="predio.id">
+          {{ predio.nome }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button type="button" (click)="fechar()">Fechar</button>
+    <button type="button" (click)="salvarOuEditar()">Salvar</button>
+  </div>
+</form>

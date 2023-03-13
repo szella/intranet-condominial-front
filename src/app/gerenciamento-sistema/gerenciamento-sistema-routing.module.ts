@@ -9,6 +9,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./predio/predio.module').then((m) => m.PredioModule),
   },
+  { path: 'local-evento', loadChildren: () => import('./local-evento/local-evento.module').then(m => m.LocalEventoModule) },
 ];
 
 @NgModule({
