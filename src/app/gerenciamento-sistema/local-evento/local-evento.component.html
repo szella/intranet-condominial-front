@@ -1,19 +1,21 @@
 <div class="menu-lateral">
+  <a routerLink="/gerenciamento-sistema">Voltar - Gerenciamento Sistema</a>
+  <br />
   <button type="button" (click)="adicionar()">Adicionar</button>
 </div>
 <div class="conteudo">
   <table>
     <thead>
+      <th>Prédio</th>
       <th>Nome</th>
       <th>Ações</th>
     </thead>
     <tbody>
       <tr *ngFor="let localEvento of locaisEvento">
+        <td>{{ localEvento.predio.nome }}</td>
         <td>{{ localEvento.nome }}</td>
         <td>
-          <button type="button" (click)="editar (localEvento.id)">
-            Editar
-          </button>
+          <button type="button" (click)="editar(localEvento.id)">Editar</button>
           <button type="button" (click)="deletar(localEvento)">Deletar</button>
         </td>
       </tr>
