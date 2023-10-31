@@ -1,1 +1,22 @@
-<p>cargo works!</p>
+<div class="menu-lateral">
+  <a routerLink="/gerenciamento-sistema">Voltar - Gerenciamento Sistema</a>
+  <br />
+  <button type="button" (click)="adicionar()">Adicionar</button>
+</div>
+<div class="conteudo">
+  <table>
+    <thead>
+      <th>Nome</th>
+      <th>Ações</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cargo of cargos">
+        <td>{{ cargo.nome }}</td>
+        <td>
+          <button type="button" (click)="editar(cargo.id)">Editar</button>
+          <button type="button" (click)="deletar(cargo)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
