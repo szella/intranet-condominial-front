@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 
 import { Andar, AndarSalvarEditar } from '../model/andar';
 
-const URL = environment.url_api + '/andares';
+const URL = environment.url_api + '/v1/andares';
 
 @Injectable({
   providedIn: 'root',

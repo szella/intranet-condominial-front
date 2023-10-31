@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 
 import { Unidade, UnidadeSalvarEditar } from '../model/unidade';
 
-const URL = environment.url_api + '/unidades';
+const URL = environment.url_api + '/v1/unidades';
 
 @Injectable({
   providedIn: 'root',

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Predio, PredioEditar, PredioSalvar } from '../model/predio';
 
-const URL = environment.url_api + '/predios';
+const URL = environment.url_api + '/v1/predios';
 
 @Injectable({
   providedIn: 'root',

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LocalEvento, LocalEventoSalvarEditar } from '../model/local-evento';
 
-const URL = environment.url_api + '/locais-evento';
+const URL = environment.url_api + '/v1/locais-evento';
 
 @Injectable({
   providedIn: 'root',
